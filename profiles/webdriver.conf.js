@@ -7,7 +7,6 @@ module.exports = {
         url: "0.0.0.0",
         browser: "chrome",
         restart: false,
-        host: process.env.HOST,
         waitForTimeout: 10000,
         port: 4445,
         timeouts: {
