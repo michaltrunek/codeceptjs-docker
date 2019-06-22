@@ -9,11 +9,7 @@
   },
   "scripts": {
     "cjs": "codeceptjs",
-    "test": "codeceptjs run --steps --debug",
-    "test:current": "SELENIUM_PORT=4444 codeceptjs run --steps --debug --grep @current",
-    "test:selenium-standalone": "SELENIUM_PORT=4444 codeceptjs run --steps --debug",
-    "test:debug": "SELENIUM_PORT=4444 node --inspect-brk=51413 ./node_modules/.bin/codeceptjs run",
-    "test:docker": "SELENIUM_HOST=selenium docker-compose run codeceptjs",
+    "test": "profile=normal codeceptjs run --steps --debug",
     "selenium": "selenium-standalone",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start"
@@ -21,9 +17,9 @@
   "author": "Maksymilian Majer",
   "license": "MIT",
   "devDependencies": {
-    "codeceptjs": "1.1.7",
-    "codeceptjs-webdriverio": "^1.1.0",
-    "selenium-standalone": "6.13.0"
+    "codeceptjs": "2.1.4",
+    "selenium-standalone": "6.13.0",
+    "webdriverio": "5.10.4"
   },
   "dependencies": {}
 }
