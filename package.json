@@ -10,7 +10,7 @@
     "test": "profile=normal codeceptjs run --steps --debug --verbose",
     "selenium": "selenium-standalone",
     "selenium:install": "selenium-standalone install",
-    "selenium:start": "selenium-standalone start"
+    "selenium:start": "selenium-standalone start -d"
   },
   "devDependencies": {
     "codeceptjs": "2.1.4",

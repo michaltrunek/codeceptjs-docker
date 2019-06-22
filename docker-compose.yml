@@ -4,8 +4,8 @@ services:
   chrome:
     image: selenium/standalone-chrome-debug:3.141.59-radium
     ports:
-      - '4445:4444'
-      - '5901:5900'
+      - '4445:4445'
+      - '5901:5901'
     volumes:
       - /dev/shm:/dev/shm
       - /var/run/docker.sock:/var/run/docker.sock
