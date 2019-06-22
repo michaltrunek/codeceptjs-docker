@@ -24,5 +24,6 @@ blocks:
           commands:
             - npm install
             - docker-compose up -d
-            - npm test
+            - wget http://localhost:4445
+            #- npm test
 
