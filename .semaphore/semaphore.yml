@@ -25,5 +25,6 @@ blocks:
             - npm install
             - docker-compose up -d
             - docker container ls
+            - lsof -i ':4445'
             - npm test
 

@@ -9,7 +9,7 @@ module.exports = {
         restart: false,
         host: "0.0.0.0",
         waitForTimeout: 10000,
-        port: 4444,
+        port: 4445,
         timeouts: {
             "script": 60000,
             "page load": 60000
