@@ -1,10 +1,8 @@
 const webDriverConfig = require('./profiles/webdriver.conf'); // reading selenium config from separate file
 
-webDriverConfig.host = process.env.SELENIUM_HOST || '0.0.0.0'; // choosing local vs. docker selenium
-webDriverConfig.port = process.env.SELENIUM_PORT || 4445; // running local and docker on different ports to avoid conflicts
+//webDriverConfig.host = process.env.SELENIUM_HOST || '0.0.0.0'; // choosing local vs. docker selenium
+//webDriverConfig.port = process.env.SELENIUM_PORT || 4445; // running local and docker on different ports to avoid conflicts
 console.log('Selenium config', 'Host:', webDriverConfig.host, 'Port:', webDriverConfig.port);
-console.log('host: ' + process.env.HOST);
-console.log('selenium-host' + process.env.SELENIUM_HOST);
 
 exports.config = {
     "tests": "./tests/**/*_test.js",
