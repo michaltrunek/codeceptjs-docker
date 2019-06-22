@@ -1,21 +1,17 @@
 {
-  "name": "codceptjs-docker-tutorial",
+  "name": "codeceptjs-docker",
   "version": "0.0.1",
   "description": "End to end tests for WordPress using CodeceptJS",
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maksymilian-majer/codeceptjs-docker-tutorial.git"
+    "url": "https://github.com/michaltrunek/codeceptjs-docker.git"
   },
   "scripts": {
-    "cjs": "codeceptjs",
     "test": "profile=normal codeceptjs run --steps --debug",
     "selenium": "selenium-standalone",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start"
   },
-  "author": "Maksymilian Majer",
-  "license": "MIT",
   "devDependencies": {
     "codeceptjs": "2.1.4",
     "selenium-standalone": "6.13.0",
