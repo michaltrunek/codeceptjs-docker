@@ -24,5 +24,5 @@ blocks:
           commands:
             - npm install
             - docker-compose up -d
-            - profile=normal codeceptjs run --steps --debug
+            - npm test
 
