@@ -9,6 +9,7 @@ module.exports = {
         restart: false,
         waitForTimeout: 10000,
         port: 4445,
+        host: "http://localhost:4445/wd/hub",
         timeouts: {
             "script": 60000,
             "page load": 60000
