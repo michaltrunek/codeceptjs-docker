@@ -16,3 +16,10 @@ blocks:
             # Uncomment the following line to pull your code,
             # then proceed by adding your custom commands:
             - checkout
+            - docker stop $(docker ps -a -q)
+            - docker rm $(docker ps -a -q)
+            - docker-compose up -d
+            - sudo npm install codeceptjs
+            - sudo npm install webdriverio
+            - profile=normal codeceptjs run --steps --debug
+
