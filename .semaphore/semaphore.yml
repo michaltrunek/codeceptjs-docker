@@ -23,6 +23,8 @@ blocks:
         - name: Run tests in Docker
           commands:
             - npm install
+            - npm install codeceptjs
+            - npm install webdriverio
             - docker-compose up -d
             - docker container ls
             - npm test
