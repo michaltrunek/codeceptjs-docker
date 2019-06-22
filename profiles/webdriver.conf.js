@@ -7,7 +7,7 @@ module.exports = {
         url: "localhost",
         browser: "chrome",
         restart: false,
-        host: "localhost",
+        host: "0.0.0.0",
         waitForTimeout: 10000,
         port: 4445,
         timeouts: {
