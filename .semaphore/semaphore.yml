@@ -24,7 +24,5 @@ blocks:
           commands:
             - npm install
             - docker-compose up -d
-            - sudo npm install codeceptjs
-            - sudo npm install webdriverio
             - profile=normal codeceptjs run --steps --debug
 
