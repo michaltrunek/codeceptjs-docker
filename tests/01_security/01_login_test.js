@@ -1,5 +1,3 @@
-/// <reference path="../../steps.d.ts" />
-
 Feature('Login');
 
 Scenario('Login page has Username and Password labels', (I) => {
