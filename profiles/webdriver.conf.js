@@ -7,6 +7,7 @@ module.exports = {
         url: "localhost",
         browser: "chrome",
         restart: false,
+        host: "codeceptjs",
         waitForTimeout: 10000,
         port: 4445,
         timeouts: {
