@@ -25,5 +25,6 @@ blocks:
             - npm install
             - docker-compose up -d
             - docker container ls
+            - ping localhost -c 2
             - npm test
 
