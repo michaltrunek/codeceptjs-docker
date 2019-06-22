@@ -4,8 +4,8 @@ version: v1.0
 name: Hello Semaphore
 agent:
   machine:
-    type: e1-standard-2
-    os_image: ubuntu1804
+    type: a1-standard-2
+    os_image: macos-mojave
 blocks:
   - name: Node.js example
     task:
