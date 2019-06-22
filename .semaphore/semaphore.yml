@@ -24,5 +24,6 @@ blocks:
           commands:
             - npm install
             - docker-compose up -d
+            - docker container ls
             - npm test
 
