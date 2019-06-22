@@ -23,8 +23,7 @@ blocks:
         - name: Run tests in Docker
           commands:
             - npm install
-            - docker-compose up -d
-            - docker container ls
-            - wget 0.0.0.0:4445
+            #- docker-compose up -d
+            - docker run -d -p 4445:4445 -v /dev/shm:/dev/shm selenium/standalone-chrome
             - npm test
 
