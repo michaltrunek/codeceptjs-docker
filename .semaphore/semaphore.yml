@@ -22,7 +22,8 @@ blocks:
       jobs:
         - name: Run tests in Docker
           commands:
-            - npm install
-            - docker-compose up -d
+            - sudo nano /etc/hosts
+            #- npm install
+            #- docker-compose up -d
             - npm test
 
