@@ -1,0 +1,29 @@
+# For more Node.js and JavaScript information and examples, see
+# https://docs.semaphoreci.com/article/82-language-javascript-and-nodejs
+version: v1.0
+name: Hello Semaphore
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Node.js example
+    task:
+      prologue:
+        commands:
+          # Get the latest version of our source code from GitHub:
+          - checkout
+
+          # Use the version of Node.js specified in .nvmrc.
+          # Semaphore provides nvm preinstalled.
+          - nvm use
+          - node --version
+          - npm --version
+      jobs:
+        - name: Run tests in Docker
+          commands:
+            - npm install
+            - docker-compose up -d && sleep 10
+            #- wget http://localhost:4445
+            - npm test
+

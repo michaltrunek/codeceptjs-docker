@@ -2,12 +2,12 @@ Feature('Login');
 
 Scenario('Login page has Username and Password labels', (I) => {
     I.amOnPage('https://www.tipico.de');
-    I.seeElement('[class*="login-button"]');
+    I.seeElement('[class*="login-buttonnnn"]');
     I.click('[class*="login-button"]');
     I.fillField('[id="login"]', 'Login');
     I.fillField('[id="password"]', 'Password');
     I.seeInField('[id="login"]', 'Login');
-});
+}).tag('@security');
 
 Scenario('Password field is required', (I) => {
     I.amOnPage('https://www.tipico.de');
@@ -16,18 +16,16 @@ Scenario('Password field is required', (I) => {
     I.fillField('[id="login"]', 'Login');
     I.fillField('[id="password"]', 'Password');
     I.seeInField('[id="login"]', 'Login');
-});
-
+}).tag('@security');
 
 Scenario('Invalid username or password', (I) => {
     I.amOnPage('https://www.tipico.de');
-    I.seeElement('[class*="login-button"]');
+    I.seeElement('[class*="login-buttonnnnn"]');
     I.click('[class*="login-button"]');
     I.fillField('[id="login"]', 'Login');
     I.fillField('[id="password"]', 'Password');
     I.seeInField('[id="login"]', 'Login');
-});
-
+}).tag('@security');
 
 Scenario('Login with correct credentials', (I) => {
     I.amOnPage('https://www.tipico.de');
@@ -36,4 +34,4 @@ Scenario('Login with correct credentials', (I) => {
     I.fillField('[id="login"]', 'Login');
     I.fillField('[id="password"]', 'Password');
     I.seeInField('[id="login"]', 'Login');
-});
+}).tag('@security');

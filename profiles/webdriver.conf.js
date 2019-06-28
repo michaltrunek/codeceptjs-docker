@@ -4,11 +4,12 @@ module.exports = {
         smart: 'smart'
     },
     normal: {
-        url: "localhost",
+        url: "0.0.0.0",
         browser: "chrome",
         restart: false,
-        waitForTimeout: 10000,
+        waitForTimeout: 5000,
         port: 4445,
+        host: "127.0.0.1",
         timeouts: {
             "script": 60000,
             "page load": 60000
