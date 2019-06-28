@@ -13,11 +13,17 @@
     "single": "profile=normal codeceptjs run --steps",
     "selenium": "selenium-standalone",
     "selenium:install": "selenium-standalone install",
-    "selenium:start": "selenium-standalone start -d"
+    "selenium:start": "selenium-standalone start -d",
+    "stop-containers": "docker stop selenium codeceptjs || true && docker rm selenium codeceptjs || true",
+    "codeceptjs-docker": "docker run --name codeceptjs -h codeceptjs --link dockerhub:dockerhub --net codeceptjs-docker-tutorial_default -v $(pwd):/tests -v /var/run/docker.sock:/var/run/docker.sock -e NODE_ICU_DATA=node_modules/full-icu -e profile=normal nexus.booxdev.com:8443/codeceptjs:v1.0.0",
+    "local-docker": "npm run stop-containers && npm run codeceptjs-docker"
   },
   "devDependencies": {
     "codeceptjs": "2.1.5",
     "selenium-standalone": "6.16.0",
-    "webdriverio": "5.10.4"
+    "webdriverio": "5.10.4",
+    "full-icu": "^1.2.1",
+    "mocha-multi": "^1.0.1",
+    "mocha": "^5.2.0"
   }
 }

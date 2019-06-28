@@ -15,5 +15,7 @@ services:
 
   hub:
     image: selenium/hub:3.141.59-radium
+    container_name: dockerhub
+    hostname: dockerhub
     ports:
       - "4445:4444"
