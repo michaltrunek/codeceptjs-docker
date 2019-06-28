@@ -11,6 +11,12 @@ exports.config = {
     helpers: {
         WebDriver: webDriverConfig.loadProfile()
     },
+    multiple: {
+        parallel: {
+            chunks: 3,
+            browsers: ["chrome"]
+        }
+    },
     include: {
         "I": "./steps_file.js"
     },

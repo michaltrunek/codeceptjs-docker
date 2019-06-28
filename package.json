@@ -7,17 +7,17 @@
     "url": "https://github.com/michaltrunek/codeceptjs-docker.git"
   },
   "scripts": {
-    "test": "profile=normal codeceptjs run --steps",
+    "testSecurity": "profile=normal codeceptjs run --steps --grep @security",
+    "testNavigation": "profile=normal codeceptjs run --steps --grep @navigation",
+    "parallel": "profile=normal codeceptjs run-multiple parallel",
+    "single": "profile=normal codeceptjs run --steps",
     "selenium": "selenium-standalone",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start -d"
   },
   "devDependencies": {
-    "codeceptjs": "2.1.4",
+    "codeceptjs": "2.1.5",
     "selenium-standalone": "6.16.0",
     "webdriverio": "5.10.4"
-  },
-  "dependencies": {
-    "wget": "0.0.1"
   }
 }
