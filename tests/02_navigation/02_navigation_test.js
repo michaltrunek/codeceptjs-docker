@@ -8,7 +8,7 @@ Scenario('Home page displayed', (I) => {
 Scenario('Home page displayed test 2', (I) => {
     I.amOnPage('https://www.tipico.de');
     I.seeElement('[class*="login-button"]');
-}).tag('@navigation');
+}).tag('@one');
 
 Scenario('Home page displayed test 3', (I) => {
     I.amOnPage('https://www.tipico.de');

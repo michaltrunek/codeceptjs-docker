@@ -8,7 +8,7 @@ Scenario('Login 1', (I) => {
 Scenario('Login 2', (I) => {
     I.amOnPage('https://www.tipico.de');
     I.seeElement('[class*="login-button"]');
-}).tag('@security');
+}).tag('@one');
 
 Scenario('Login 3', (I) => {
     I.amOnPage('https://www.tipico.de');

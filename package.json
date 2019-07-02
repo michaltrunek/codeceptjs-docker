@@ -9,14 +9,16 @@
   "scripts": {
     "testSecurity": "profile=normal codeceptjs run --steps --grep @security",
     "testNavigation": "profile=normal codeceptjs run --steps --grep @navigation",
-    "parallel": "profile=normal codeceptjs run-multiple parallel",
+    "parallel": "profile=local codeceptjs run-multiple parallel --grep @one",
     "single": "profile=normal codeceptjs run --steps",
     "selenium": "selenium-standalone",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start -d",
+    "selenium-docker": "docker run -tid --name selenium -h selenium -p 4445:4444 -v /dev/shm:/dev/shm -v /var/run/docker.sock:/var/run/docker.sock selenium/standalone-chrome",
     "stop-containers": "docker stop selenium codeceptjs || true && docker rm selenium codeceptjs || true",
-    "codeceptjs-docker": "docker run --name codeceptjs -h codeceptjs --link dockerhub:dockerhub --net codeceptjs-docker-tutorial_default -v $(pwd):/tests -v /var/run/docker.sock:/var/run/docker.sock -e NODE_ICU_DATA=node_modules/full-icu -e profile=normal nexus.booxdev.com:8443/codeceptjs:v1.0.0",
-    "local-docker": "npm run stop-containers && npm run codeceptjs-docker"
+    "docker": "docker run -it --rm -v $PWD:/tests/ -v /var/run/docker.sock:/var/run/docker.sock -e HOST=selenium-hub --link selenium-hub:selenium-hub --net grid codeception/codeceptjs codeceptjs run-multiple parallel --profile 'normal'",
+    "codeceptjs-docker": "docker run --net grid --link selenium-hub:selenium-hub -v $(pwd):/tests -v /var/run/docker.sock:/var/run/docker.sock -e NODE_ICU_DATA=node_modules/full-icu -e HOST=selenium-hub -e profile=normal -e CODECEPT_ARGS='--grep @one' nexus.booxdev.com:8443/codeceptjs:v1.0.0",
+    "local-docker": "npm run stop-containers && npm run docker"
   },
   "devDependencies": {
     "codeceptjs": "2.1.5",

@@ -1,22 +1,28 @@
 module.exports = {
     profiles : {
         normal: 'normal',
-        smart: 'smart'
+        local: 'local'
     },
     normal: {
-        url: "0.0.0.0",
+        url: 'http://localhost:3000/',
         browser: "chrome",
+        desiredCapabilities: {
+            chromeOptions: {
+                w3c: false
+            }
+        },
         restart: false,
         waitForTimeout: 5000,
-        port: 4445,
-        host: "127.0.0.1",
+        //port: 4445,
+        //host: "172.20.0.2",
+        host: process.env.HOST,
         timeouts: {
             "script": 60000,
             "page load": 60000
         },
         coloredLogs: true
     },
-    smart: {
+    local: {
         url: "localhost",
         browser: "chrome",
         restart: true,
@@ -35,8 +41,8 @@ module.exports = {
     switch(profile) {
         case this.profiles.normal:
             return this.normal;
-        case this.profiles.smart:
-            return this.smart;
+        case this.profiles.local:
+            return this.local;
         default:
             return this.normal;
     }
