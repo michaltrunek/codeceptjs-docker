@@ -2,7 +2,7 @@ Feature('Login');
 
 Scenario('Login page has Username and Password labels', (I) => {
     I.amOnPage('https://www.tipico.de');
-    I.seeElement('[class*="login-buttonnnn"]');
+    I.seeElement('[class*="login-button"]');
     I.click('[class*="login-button"]');
     I.fillField('[id="login"]', 'Login');
     I.fillField('[id="password"]', 'Password');
@@ -20,7 +20,7 @@ Scenario('Password field is required', (I) => {
 
 Scenario('Invalid username or password', (I) => {
     I.amOnPage('https://www.tipico.de');
-    I.seeElement('[class*="login-buttonnnnn"]');
+    I.seeElement('[class*="login-button"]');
     I.click('[class*="login-button"]');
     I.fillField('[id="login"]', 'Login');
     I.fillField('[id="password"]', 'Password');

@@ -18,7 +18,9 @@
     "stop-containers": "docker stop selenium codeceptjs || true && docker rm selenium codeceptjs || true",
     "docker": "docker run -it --rm -v $PWD:/tests/ -v /var/run/docker.sock:/var/run/docker.sock -e HOST=selenium-hub --link selenium-hub:selenium-hub --net grid codeception/codeceptjs codeceptjs run-multiple parallel --profile 'normal'",
     "codeceptjs-docker": "docker run --net grid --link selenium-hub:selenium-hub -v $(pwd):/tests -v /var/run/docker.sock:/var/run/docker.sock -e NODE_ICU_DATA=node_modules/full-icu -e HOST=selenium-hub -e profile=normal -e CODECEPT_ARGS='--grep @one' nexus.booxdev.com:8443/codeceptjs:v1.0.0",
-    "local-docker": "npm run stop-containers && npm run docker"
+    "local-docker": "npm run stop-containers && npm run docker",
+    "test:insidedocker": "profile=normal HOST=selenium-hub codeceptjs run-multiple parallel",
+    "docker-node": "docker run --net grid --link selenium-hub:selenium-hub -v $(pwd):/tests -v /var/run/docker.sock:/var/run/docker.sock -e NODE_ICU_DATA=node_modules/full-icu -e CODECEPT_ARGS='--grep @one' trunekm/codeceptjs-docker-tutorial"
   },
   "devDependencies": {
     "codeceptjs": "2.1.5",

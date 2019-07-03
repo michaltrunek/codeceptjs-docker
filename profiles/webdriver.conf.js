@@ -6,11 +6,6 @@ module.exports = {
     normal: {
         url: 'http://localhost:3000/',
         browser: "chrome",
-        desiredCapabilities: {
-            chromeOptions: {
-                w3c: false
-            }
-        },
         restart: false,
         waitForTimeout: 5000,
         //port: 4445,
