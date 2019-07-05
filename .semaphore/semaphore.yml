@@ -23,7 +23,8 @@ blocks:
         - name: Run tests in Docker
           commands:
             - npm install
-            - docker-compose up -d && sleep 10
-            #- wget http://localhost:4445
-            - npm test
+            - docker network create grid
+            - docker build -t codeceptjs-docker-tutorial .
+            - docker-compose up -d --scale chrome=3 && sleep 10
+            - npm run docker-node
 
